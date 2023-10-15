@@ -13,7 +13,7 @@
     max-width: 150px; /* Set the maximum width of your logo */
 }
 header {
-    background-image: url('banner_1.jpg');
+    background-image: url('banner.jpg');
     background-size: cover;
     background-position: center;
     height: 70vh;
