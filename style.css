@@ -1,0 +1,106 @@
+.navbar {
+    background-color: #ffffff; /* Change the background color to your preference */
+    height: 80px;
+}
+
+.navbar .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar .navbar-brand img {
+    max-width: 150px; /* Set the maximum width of your logo */
+}
+header {
+    background-image: url('banner_1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+}
+.fv{
+    font: poppins;
+    font-size: bold;
+    font-size: 55px;
+}
+
+.hero-name{
+    font: poppins;
+    font-size: 600;
+    font-size: 65px;
+}
+
+.hero-des{
+    font: poppins;
+    font-size: 18px;
+}
+
+.food-name{
+    font: poppins;
+    font-weight: bold;
+    font-size: 25px;    
+}
+
+.food-des{
+    font: poppins;
+    font-size: 18px;
+    color: #706F6F;
+}
+
+#search-field{
+    height: 46px;
+}
+
+.btn-search{
+    font: poppins;
+    font-size: 20px;
+    font-weight: bold;
+    background: rgb(255, 193, 7);
+    color: black;
+}
+
+.btn-detail{
+    font: poppins;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    color: rgb(255, 193, 7);
+    text-decoration: underline;
+}
+
+.justified-text {
+    text-align: justify;
+}
+
+.food-name2{
+    font: poppins;
+    font-weight: bold;
+    font-size: 30px;    
+}
+
+.cat{
+    font: poppins;
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+}
+.m-name{
+    font: poppins;
+    font-size: 20px;
+    color: #706F6F;
+}
+
+.btnclose{
+    font: poppins;
+    font-weight:600 ;
+    font-size: 20px; ;
+    background: #DC3545;
+    color: white;
+    border: none;
+}

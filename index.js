@@ -13,18 +13,22 @@ const fetching = async (url) =>{
     
 }
 
-const loadmeal = async (searchItem) => {
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchItem}`
-    fetching(url)
-}
+
 
 // Home Page ===================>
 const loadmeal2 = async () => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=`
     fetching(url)
 }
+
 loadmeal2();
 // <================================
+
+
+const loadmeal = async (searchItem) => {
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchItem}`
+    fetching(url);
+}
 
 const displayMeals = meals => {
     // console.log(meals);
@@ -41,14 +45,22 @@ const displayMeals = meals => {
         // set content of the child elements 
         const shortInstrustions = meal.strInstructions.slice(0, 200) + '...';
         mealDiv.innerHTML = `
-        <div class="card h-100">
-            <img  height="70%" src="${meal.strMealThumb}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${meal.strMeal}</h5>
-                <p class="card-text">${shortInstrustions}</p>
-                <button onclick = "loadMealDetail(${meal.idMeal})" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mealDetails">
-                    Details
-                </button>
+        <div class="card mb-5 border-light shadow-lg " style="width:558px ; height: 300px">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="${meal.strMealThumb}" class="img-fluid rounded-start-3" style="width: 300px; height: 300px" alt="...">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                    <h5 class="card-title d-flex align-items-center food-name">${meal.strMeal}</h5>
+                    <p class="card-text d-flex align-items-center food-des justified-text">
+                    ${shortInstrustions} <br>
+                    </p>
+                    <button onclick = "loadMealDetail(${meal.idMeal})" type="button" class="btn-detail" data-bs-toggle="modal" data-bs-target="#mealDetails">
+                        View Details
+                    </button>
+                    </div>
+                </div>
             </div>
         </div>
             `
@@ -59,11 +71,13 @@ const displayMeals = meals => {
 }
 
 
+
 const searchMeal = () =>{
     const searchText = document.getElementById('search-field').value;
     // console.log(searchText);
-    
     loadmeal(searchText);
+
+
     // Clear the input field
     document.getElementById('search-field').value = '';
 }
@@ -97,15 +111,19 @@ const displaymealDetails = meal => {
     document.getElementById('mealDetailsLabel').innerText = meal.strMeal;
     const mealdetailbody = document.getElementById('mealDetailsBody');
     mealdetailbody.innerHTML = `
-    <h4>Catagory: ${meal.strCategory}</h4>
-    <h5>Region: ${meal.strArea}</h5>
-    <p>${meal.strInstructions}</p> 
-        
-    <iframe src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}" width="100%" height="300" style="border:none;">
+    <iframe src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}" width="100%" height="450" style="border:none;">
     </iframe>
+    <h2 class= "m-name py-2"><span class="cat">Catagory : </span>${meal.strCategory}</h2>
+    <h5 class= "m-name py-2"> <span class="cat">Region : </span>${meal.strArea}</h5>
+    <p class="justified-text m-name"> <span class="cat">Instructions : </span>${meal.strInstructions}</p> 
+        
     `
     // console.log(meal.strYoutube);
 }
 // <iframe width="100%" height="315" src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}" frameborder="0" allowfullscreen></iframe>
 
 // <===============================================
+
+document.getElementById("reload").addEventListener("click", function() {
+    location.reload(); // Reload the page
+});
